@@ -1,0 +1,143 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger e Otakus - Cardápio Digital</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="Otaku's Burger Logo" class="logo-image">
+                <i class="fas fa-fire"></i>
+                <h1>Burger <span class="highlight">e</span> Otakus</h1>
+            </div>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Bem Vindo ao Cardápio Digital</h2>
+            <p>Sabores que despertam o poder interior dos otakus!</p>
+        </section>
+
+        <section class="menu-section">
+            <h3><i class="fas fa-hamburger"></i> Burgers</h3>
+            <div class="menu-grid" id="burgers">
+                <!-- Burgers serão carregados via JavaScript -->
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h3><i class="fas fa-utensils"></i> Acompanhamentos</h3>
+            <div class="menu-grid" id="sides">
+                <!-- Acompanhamentos serão carregados via JavaScript -->
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h3><i class="fas fa-glass-cheers"></i> Bebidas</h3>
+            <div class="menu-grid" id="drinks">
+                <!-- Bebidas serão carregadas via JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Seu Pedido</h3>
+            <button class="close-cart" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Seu carrinho está vazio</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: R$ <span id="cartTotal">0,00</span></strong>
+            </div>
+            <div class="customer-info">
+                <input type="text" id="customerName" placeholder="Seu nome" required>
+                <input type="tel" id="customerPhone" placeholder="Seu telefone" required>
+                <input type="text" id="customerAddress" placeholder="Seu endereço completo" required>
+                
+                <div class="payment-section">
+                    <label for="paymentMethod">Forma de Pagamento:</label>
+                    <select id="paymentMethod" onchange="toggleChangeField()" required>
+                        <option value="">Selecione...</option>
+                        <option value="pix">💳 Pix</option>
+                        <option value="card">💳 Cartão</option>
+                        <option value="cash">💵 Dinheiro</option>
+                    </select>
+                    
+                    <div id="changeSection" style="display: none;">
+                        <input type="number" id="changeFor" placeholder="Troco para quanto? (opcional)" min="0" step="0.01">
+                    </div>
+                </div>
+            </div>
+            <button class="whatsapp-btn" onclick="sendToWhatsApp()">
+                <i class="fab fa-whatsapp"></i>
+                Enviar pelo WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- AI Assistant Button -->
+    <div class="ai-assistant" onclick="toggleAI()">
+        <i class="fas fa-robot"></i>
+    </div>
+
+    <!-- AI Chat Modal -->
+    <div class="ai-modal" id="aiModal">
+        <div class="ai-header">
+            <h3><i class="fas fa-robot"></i> Shenron - Assistente IA</h3>
+            <button class="close-ai" onclick="toggleAI()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="ai-chat" id="aiChat">
+            <div class="ai-message">
+                <p>🐉 Olá! Sou Shenron, seu assistente virtual do Burger e Otakus!</p>
+                <p>Posso te ajudar a:</p>
+                <ul style="margin: 10px 0; padding-left: 20px;">
+                    <li>🍔 Escolher o burger perfeito</li>
+                    <li>🎯 Sugerir combos personalizados</li>
+                    <li>🛒 Adicionar itens ao carrinho</li>
+                    <li>📋 Finalizar seu pedido</li>
+                </ul>
+                <div class="ai-action-buttons">
+                    <button class="ai-action-btn" onclick="handleAIAction('Ver Menu Completo')">Ver Menu</button>
+                    <button class="ai-action-btn" onclick="handleAIAction('Sugestões Populares')">Populares</button>
+                    <button class="ai-action-btn" onclick="handleAIAction('Montar Combo')">Montar Combo</button>
+                </div>
+            </div>
+        </div>
+        <div class="ai-input">
+            <input type="text" id="aiInput" placeholder="Pergunte sobre nossos burgers, peça sugestões ou diga o que você quer...">
+            <button onclick="sendAIMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="ai-overlay" id="aiOverlay" onclick="toggleAI()"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
