@@ -5,49 +5,49 @@ const menuData = {
             id: 1,
             name: "Burger do Goku",
             price: 19.90,
-            description: "1 Carne de burger artesanal, Mussarela, Cebola Crisp e Molho Super."
+            description: "1 Carne de burger bovino artesanal, Mussarela, Cebola Crisp e Molho Super."
         },
         {
             id: 2,
             name: "Burger do Vegeta",
             price: 19.90,
-            description: "1 Carne de burger artesanal, Cheddar, Cebola Crisp e Molho Fumaça."
+            description: "1 Carne de burger bovino artesanal, Cheddar, Cebola Crisp e Molho Fumaça."
         },
         {
             id: 3,
             name: "Burger do Naruto",
             price: 16.90,
-            description: "1 Carne de burger artesanal, Cheddar e Molho Super."
+            description: "1 Carne de burger bovino artesanal, Cheddar e Molho Super."
         },
         {
             id: 4,
             name: "Burger do Sasuke",
             price: 16.90,
-            description: "1 Carne de burger artesanal, Mussarela e Molho Fumaça."
+            description: "1 Carne de burger bovino artesanal, Mussarela e Molho Fumaça."
         },
         {
             id: 5,
             name: "Burger do Goku SSJ 2",
             price: 26.90,
-            description: "2 Carne de burger artesanal, Mussarela, Cebola Crisp e Molho Super."
+            description: "2 Carnes de burger bovino artesanal, Mussarela, Cebola Crisp e Molho Super."
         },
         {
             id: 6,
             name: "Burger do Vegeta Duplo",
             price: 26.90,
-            description: "2 Carne de burger artesanal, Cheddar, Cebola Crisp e Molho Fumaça."
+            description: "2 Carnes de burger bovino artesanal, Cheddar, Cebola Crisp e Molho Fumaça."
         },
         {
             id: 7,
             name: "Burger do Naruto Sábio",
             price: 21.90,
-            description: "2 Carne de burger artesanal, Cheddar e Molho Super."
+            description: "2 Carnes de burger bovino artesanal, Cheddar e Molho Super."
         },
         {
             id: 8,
             name: "Burger do Sasuke Susanoo",
             price: 21.90,
-            description: "2 Carne de burger artesanal, Mussarela e Molho Fumaça."
+            description: "2 Carnes de burger bovino artesanal, Mussarela e Molho Fumaça."
         }
     ],
     sides: [
