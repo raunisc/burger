@@ -33,7 +33,7 @@ const menuData = {
         },
         {
             id: 6,
-            name: "Burger do Vegeta Duplo",
+            name: "Burger do Vegeta SSJ 2",
             price: 26.90,
             description: "2 Carnes de burger bovino artesanal, Cheddar, Cebola Crisp e Molho Fumaça."
         },
