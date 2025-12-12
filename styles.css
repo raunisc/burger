@@ -7,24 +7,24 @@
 }
 
 :root {
-  --bg: #f4f4f7;
-  --bg-alt: #ffffff;
-  --card-bg: #ffffff;
+  --bg: #0b0c10;
+  --bg-alt: #10121a;
+  --card-bg: #151823;
   --accent: #ff3b30; /* vermelho anime/energia */
   --accent-light: #ff6b5c;
   --accent-secondary: #ffb300; /* amarelo shonen */
-  --text-main: #1f2430;
-  --text-muted: #6b7280;
-  --border: #e0e4f0;
-  --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.16);
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  --border: #272b3a;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.7);
   --radius: 12px;
-  --glow: 0 0 18px rgba(255, 179, 0, 0.35);
+  --glow: 0 0 18px rgba(59, 130, 246, 0.35);
 }
 
 body {
   font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top left, #fff7e6 0, #f4f4f7 40%, #f4f4f7 100%);
+  background: radial-gradient(circle at top left, #111827 0, #020617 45%, #000000 100%);
   color: var(--text-main);
   margin: 0;
 }
@@ -98,7 +98,7 @@ body {
   justify-content: flex-end;
   gap: 8px;
   font-size: 0.75rem;
-  color: #111111;
+  color: white;
   text-align: right;
 }
 
@@ -371,7 +371,7 @@ select.field-error {
   padding: 12px;
   border-radius: var(--radius);
   border: 2px solid var(--border);
-  background: linear-gradient(135deg, #ffffff 0%, #f7f7fb 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
   display: flex;
   transition: all 0.3s ease;
   overflow: hidden;
@@ -384,9 +384,9 @@ select.field-error {
 }
 
 .menu-item.featured {
-  background: linear-gradient(135deg, #fff9e6 0%, #fff4d6 50%, #ffffff 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #020617 100%);
   border-color: var(--accent-secondary);
-  box-shadow: inset 0 0 16px rgba(255, 179, 0, 0.18), var(--glow);
+  box-shadow: inset 0 0 20px rgba(56, 189, 248, 0.25), var(--glow);
 }
 
 .item-layout {
@@ -416,6 +416,7 @@ select.field-error {
   overflow: hidden;
   flex-shrink: 0;
   border: 2px solid var(--border);
+  background: #020617;
 }
 
 .item-thumb img {
@@ -481,35 +482,58 @@ body:not(.promo-active) .item-price-promo {
 
 .item-desc {
   font-size: 0.8rem;
-  color: #111111;
+  color: #ffffff;
   line-height: 1.3;
 }
 
 .add-to-cart-btn {
+  position: relative;
+  overflow: hidden;
   align-self: flex-start;
   margin-top: auto;
   padding: 6px 12px;
   border-radius: 6px;
-  border: 2px solid var(--accent);
-  background: var(--accent);
-  color: white;
+  border: 2px solid #60a5fa;
+  background-image: linear-gradient(135deg, #e0f2fe, #bae6fd 40%, #f9fafb 100%);
+  color: #0f172a;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(255, 0, 110, 0.4);
+  box-shadow: 0 0 18px rgba(191, 219, 254, 0.6);
+}
+
+.add-to-cart-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 10% 0%, rgba(148, 163, 184, 0.45) 0, transparent 60%),
+    linear-gradient(145deg, rgba(248, 250, 252, 0.55), transparent 55%);
+  mix-blend-mode: screen;
+  opacity: 0.85;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.4s ease;
+  transform: translateY(0);
+}
+
+.add-to-cart-btn:hover::before {
+  opacity: 1;
+  transform: translateY(-4px);
 }
 
 .add-to-cart-btn:hover {
-  background: var(--accent-light);
-  box-shadow: 0 0 25px rgba(255, 0, 110, 0.6);
-  transform: scale(1.05);
+  background-image: linear-gradient(135deg, #bfdbfe, #93c5fd 40%, #e5e7eb 100%);
+  border-color: #93c5fd;
+  box-shadow: 0 0 26px rgba(191, 219, 254, 0.9);
+  transform: scale(1.05) translateY(-1px);
 }
 
 .add-to-cart-btn:active {
   transform: scale(0.95);
+  box-shadow: 0 0 14px rgba(147, 197, 253, 0.7);
 }
 
 /* SIDE COLUMN */
@@ -656,12 +680,12 @@ body:not(.promo-active) .item-price-promo {
 .cart-item-row {
   padding: 10px;
   border-radius: 8px;
-  background: linear-gradient(90deg, rgba(255,184,0,0.04), rgba(255,255,255,0.9));
+  background: linear-gradient(90deg, rgba(15,23,42,0.8), rgba(15,23,42,0.4));
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  border: 1px solid rgba(0,0,0,0.03);
+  border: 1px solid rgba(30,64,175,0.45);
 }
 
 .cart-item-row:last-child {
@@ -759,7 +783,7 @@ body:not(.promo-active) .item-price-promo {
 .cart-total span:last-child {
   font-weight: 700;
   font-size: 1.1rem;
-  color: var(--accent);
+  color: #16a34a;
 }
 
 .checkout-btn {
@@ -906,6 +930,53 @@ body:not(.promo-active) .item-price-promo {
   color: var(--accent);
 }
 
+/* --- novos estilos para mostrar total a pagar e economia --- */
+.order-summary-totals {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.82rem;
+}
+
+.order-summary-totals div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-total-original span {
+  color: var(--text-muted);
+}
+
+.order-total-original strong {
+  color: var(--text-muted);
+}
+
+.order-total-pay span {
+  color: #16a34a;
+}
+
+.order-total-pay strong {
+  color: #22c55e;
+  font-size: 0.9rem;
+}
+
+.order-total-savings span {
+  color: #22c55e;
+}
+
+.order-total-savings strong {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.order-item-price {
+  color: #22c55e;
+  font-weight: 600;
+}
+/* --- fim dos novos estilos --- */
+
 /* FORM */
 
 #checkout-form {
@@ -968,6 +1039,18 @@ body:not(.promo-active) .item-price-promo {
 .form-group select:focus {
   border-color: var(--accent);
   background: #ffffff;
+}
+
+/* mantém o fundo padrão no campo de nome ao focar */
+#customer-name:focus {
+  background: var(--bg-alt);
+  color: var(--text-main);
+}
+
+/* mantém o fundo padrão no campo de endereço ao focar */
+#customer-address:focus {
+  background: var(--bg-alt);
+  color: var(--text-main);
 }
 
 .delivery-only {
@@ -1188,9 +1271,23 @@ body:not(.promo-active) .item-price-promo {
   border: 1px solid var(--border);
 }
 
+/* textos em preto na seleção de forma de pagamento */
+#payment-type,
+#payment-type option {
+  color: #000000;
+}
+
+/* selects do combo usam o fundo escuro do site para melhor visibilidade */
+.combo-form select,
 .burger-select-group select {
-  padding: 8px;
-  border-radius: 8px;
+  background: var(--bg-alt);
+  color: var(--text-main);
+}
+
+.combo-form select:focus,
+.burger-select-group select:focus {
+  background: var(--bg-alt);
+  color: var(--text-main);
 }
 
 /* checkbox label + inputs (if any) ensure white text */
@@ -1201,12 +1298,12 @@ body:not(.promo-active) .item-price-promo {
 
 /* Improve cart panel appearance to look like a shopping cart card */
 .cart-panel {
-  background: linear-gradient(180deg, #fffaf0, var(--card-bg));
+  background: linear-gradient(180deg, #020617, #020617);
   border-radius: 12px;
   padding: 16px;
   border-left: 6px solid var(--accent); /* cart accent bar */
   max-width: 520px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12), 0 0 24px rgba(255,179,0,0.35);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.9), 0 0 24px rgba(37, 99, 235, 0.45);
   transform: translateY(100%);
   transition: transform 0.28s cubic-bezier(.2,.9,.3,1), box-shadow 0.2s ease;
 }
@@ -1229,7 +1326,7 @@ body:not(.promo-active) .item-price-promo {
   display: inline-block;
   width: 36px;
   height: 28px;
-  background: url('/Logo.png') no-repeat center/contain;
+  background: url('imagens/Logo.png') no-repeat center/contain;
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));
   border-radius: 6px;
 }
@@ -1238,12 +1335,12 @@ body:not(.promo-active) .item-price-promo {
 .cart-item-row {
   padding: 10px;
   border-radius: 8px;
-  background: linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+  background: linear-gradient(90deg, rgba(15,23,42,0.8), rgba(15,23,42,0.4));
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  border: 1px solid rgba(255,255,255,0.03);
+  border: 1px solid rgba(30,64,175,0.45);
 }
 
 .cart-item-main {
@@ -1291,5 +1388,90 @@ body:not(.promo-active) .item-price-promo {
 @media (max-width: 600px) {
   .burger-select-group select {
     font-size: 0.95rem;
+  }
+}
+
+/* ==== EFEITO NATALINO (NEVE + BONECO DE NEVE) ==== */
+
+.snow-container {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10%;
+  color: #ffffff;
+  font-size: 0.8rem;
+  opacity: 0.9;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  animation-name: snow-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes snow-fall {
+  0% {
+    transform: translate3d(0, -10%, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(10px, 110vh, 0);
+    opacity: 0;
+  }
+}
+
+.snowman-helper {
+  position: fixed;
+  right: 12px;
+  bottom: 80px;
+  z-index: 35;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 16px;
+  padding: 8px 11px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid rgba(239, 68, 68, 0.9);
+  animation: snowman-enter 0.5s ease-out forwards;
+  font-size: 0.7rem;
+  max-width: 220px;
+}
+
+.snowman-helper-icon {
+  font-size: 1.4rem;
+}
+
+.snowman-helper-text {
+  color: #111827;
+  line-height: 1.25;
+}
+
+@keyframes snowman-enter {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes snowman-exit {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(20px);
+    opacity: 0;
   }
 }

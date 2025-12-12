@@ -26,7 +26,7 @@ const ACTIVE_PROMO_MODE = "natal";
 const PROMO_MODES = {
   natal: {
     label: "Modo Natal",
-    bannerMessage: "Modo promoção de Natal ativado (apenas em dezembro)",
+    bannerMessage: "Modo promoção de Natal ativado (Válido apenas em dezembro)",
     icon: "🎄",
     themeClass: "promo-theme-natal"
   },
@@ -70,7 +70,7 @@ const PROMO_MODES = {
 const MENU_PRICES = {
   // Burgers
   "burger-goku": {
-    original: 23.9,
+    original: 26.9,
     natal: 19.9,
     finalDeSemana: 19.9,
     halloween: 19.9,
@@ -78,7 +78,7 @@ const MENU_PRICES = {
     freak: 19.9
   },
   "burger-vegeta": {
-    original: 23.9,
+    original: 26.9,
     natal: 19.9,
     finalDeSemana: 19.9,
     halloween: 19.9,
@@ -86,7 +86,7 @@ const MENU_PRICES = {
     freak: 19.9
   },
   "burger-naruto": {
-    original: 17.9,
+    original: 19.9,
     natal: 16.9,
     finalDeSemana: 16.9,
     halloween: 16.9,
@@ -94,7 +94,7 @@ const MENU_PRICES = {
     freak: 16.9
   },
   "burger-sasuke": {
-    original: 17.9,
+    original: 19.9,
     natal: 16.9,
     finalDeSemana: 16.9,
     halloween: 16.9,
@@ -102,7 +102,7 @@ const MENU_PRICES = {
     freak: 16.9
   },
   "burger-goku-ssj2": {
-    original: 30.9,
+    original: 33.9,
     natal: 26.9,
     finalDeSemana: 26.9,
     halloween: 26.9,
@@ -110,7 +110,7 @@ const MENU_PRICES = {
     freak: 26.9
   },
   "burger-vegeta-ssj2": {
-    original: 30.9,
+    original: 33.9,
     natal: 26.9,
     finalDeSemana: 26.9,
     halloween: 26.9,
@@ -138,20 +138,20 @@ const MENU_PRICES = {
 
   // Bebidas
   "coca-lata": {
-    original: 8.9,
-    natal: 7.9,
-    finalDeSemana: 7.9,
-    halloween: 7.9,
-    pascoa: 7.9,
-    freak: 7.9
+    original: 7.9,
+    natal: 6.9,
+    finalDeSemana: 6.9,
+    halloween: 6.9,
+    pascoa: 6.9,
+    freak: 6.9
   },
   "guarana-lata": {
-    original: 8.9,
-    natal: 7.9,
-    finalDeSemana: 7.9,
-    halloween: 7.9,
-    pascoa: 7.9,
-    freak: 7.9
+    original: 7.9,
+    natal: 6.9,
+    finalDeSemana: 6.9,
+    halloween: 6.9,
+    pascoa: 6.9,
+    freak: 6.9
   },
 
   // Combos
@@ -178,6 +178,32 @@ const MENU_PRICES = {
     halloween: 69.4,
     pascoa: 69.4,
     freak: 69.4
+  },
+
+  // Sobremesas
+  "mousse-maracuja": {
+    original: 15.9,
+    natal: 10.9,
+    finalDeSemana: 10.9,
+    halloween: 10.9,
+    pascoa: 10.9,
+    freak: 10.9
+  },
+  "mousse-chocolate": {
+    original: 15.9,
+    natal: 10.9,
+    finalDeSemana: 10.9,
+    halloween: 10.9,
+    pascoa: 10.9,
+    freak: 10.9
+  },
+  "mousse-marido-gelado": {
+    original: 15.9,
+    natal: 10.9,
+    finalDeSemana: 10.9,
+    halloween: 10.9,
+    pascoa: 10.9,
+    freak: 10.9
   }
 };
 
@@ -565,7 +591,8 @@ function updateOrderSummary() {
 
   const lines = cart
     .map((item) => {
-      const base = `${item.qty}x ${item.name} (${formatCurrency(item.price)} un)`;
+      const priceHtml = `<span class="order-item-price">${formatCurrency(item.price)}</span>`;
+      const base = `${item.qty}x ${item.name} (${priceHtml} un)`;
       const custom = describeCustomization(item);
       if (!custom) return base;
       // converte as quebras de linha em <br> para exibir no resumo
@@ -574,12 +601,39 @@ function updateOrderSummary() {
     })
     .join("<br><br>");
 
-  const total = formatCurrency(getCartTotal());
+  const totalPromo = getCartTotal();
+
+  // calcula total original (sem promo) com base na tabela MENU_PRICES
+  let totalOriginal = 0;
+  cart.forEach((item) => {
+    const priceConfig = MENU_PRICES[item.id];
+    if (priceConfig && typeof priceConfig.original === "number") {
+      totalOriginal += priceConfig.original * item.qty;
+    } else {
+      // fallback: se não tiver config, usa o próprio preço do carrinho
+      totalOriginal += item.price * item.qty;
+    }
+  });
+
+  const savings = Math.max(0, totalOriginal - totalPromo);
 
   orderSummaryEl.innerHTML = `
     <h3>Resumo do pedido</h3>
     <p>${lines}</p>
-    <p class="order-total-line"><strong>Total: ${total}</strong></p>
+    <div class="order-summary-totals">
+      <div class="order-total-original">
+        <span>Subtotal sem promoção:</span>
+        <strong>${formatCurrency(totalOriginal)}</strong>
+      </div>
+      <div class="order-total-pay">
+        <span>Você vai pagar:</span>
+        <strong>${formatCurrency(totalPromo)}</strong>
+      </div>
+      <div class="order-total-savings">
+        <span>Você economizou:</span>
+        <strong>${formatCurrency(savings)}</strong>
+      </div>
+    </div>
   `;
 }
 
@@ -965,3 +1019,59 @@ if (comboModal) {
     }
   });
 }
+
+/* ==== INICIALIZAÇÃO DO EFEITO NATALINO ==== */
+
+function initChristmasEffects() {
+  createSnowEffect();
+  createSnowmanHelper();
+}
+
+function createSnowEffect() {
+  const snowContainer = document.createElement("div");
+  snowContainer.className = "snow-container";
+
+  const flakesCount = 40;
+  for (let i = 0; i < flakesCount; i++) {
+    const flake = document.createElement("span");
+    flake.className = "snowflake";
+    flake.textContent = "❄";
+    flake.style.left = Math.random() * 100 + "%";
+    const delay = Math.random() * 8;
+    const duration = 6 + Math.random() * 8;
+    flake.style.animationDuration = `${duration}s`;
+    flake.style.animationDelay = `${delay}s`;
+    const size = 0.7 + Math.random() * 0.9;
+    flake.style.fontSize = `${size}rem`;
+    snowContainer.appendChild(flake);
+  }
+
+  document.body.appendChild(snowContainer);
+}
+
+function createSnowmanHelper() {
+  const helper = document.createElement("div");
+  helper.className = "snowman-helper";
+  helper.innerHTML = `
+    <span class="snowman-helper-icon">⛄</span>
+    <div class="snowman-helper-text">
+      Modo Natal ativo!<br/>
+      Aproveite os descontos lendários de fim de ano.
+    </div>
+  `;
+
+  document.body.appendChild(helper);
+
+  // permanece alguns segundos, depois some suavemente
+  setTimeout(() => {
+    helper.style.animation = "snowman-exit 0.5s ease-in forwards";
+    setTimeout(() => {
+      if (helper.parentNode) {
+        helper.parentNode.removeChild(helper);
+      }
+    }, 550);
+  }, 6500);
+}
+
+// dispara efeitos natalinos após tudo estar pronto
+initChristmasEffects();
