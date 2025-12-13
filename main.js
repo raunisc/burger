@@ -1,7 +1,7 @@
 const menuCard = document.getElementById("menu-card");
 
 // WhatsApp config (substitua pelo número oficial, apenas dígitos, com DDI/DDD, ex: 5599999999999)
-const WHATSAPP_NUMBER = "5571996447078";
+const WHATSAPP_NUMBER = "5571999391758";
 
 // =========================
 // ATIVAR/DESATIVAR MODO PROMOÇÃO
