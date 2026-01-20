@@ -1,7 +1,7 @@
 const menuCard = document.getElementById("menu-card");
 
 // WhatsApp config (substitua pelo número oficial, apenas dígitos, com DDI/DDD, ex: 5599999999999)
-const WHATSAPP_NUMBER = "5571999391758";
+const WHATSAPP_NUMBER = "5571996475834";
 
 // =========================
 // ATIVAR/DESATIVAR MODO PROMOÇÃO
@@ -11,7 +11,7 @@ const WHATSAPP_NUMBER = "5571999391758";
 // Use: null para nenhum modo (preços originais)
 //      "natal", "finalDeSemana", "halloween", "pascoa", "freak" para ativar modos configurados abaixo.
 //
-const ACTIVE_PROMO_MODE = "natal"; 
+const ACTIVE_PROMO_MODE = "freak"; 
 // Exemplo para desativar todas promoções:
 // const ACTIVE_PROMO_MODE = null;
 
