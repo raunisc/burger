@@ -1,520 +1,544 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Burger e Otakus - Cardápio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="main.js" defer></script>
-  </head>
-  <body>
-    <div class="app">
-      <header class="main-header">
-        <div class="header-content">
-          <img class="logo-img" src="imagens/Logo.webp" alt="Otakus Burger" />
-          <div class="title-block">
-            <h1>Burger e Otakus</h1>
-            <p class="tagline">Sabores lendários direto para você</p>
-          </div>
-          <div class="header-extra">
-            <p class="hours">Funcionamento: Terça a Domingo, das 18h às 23h</p>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <title>Burger e Otakus - Cardápio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="canonical" href="https://burgereotakus.com.br/" />
+  <script>
+    if (window.location.hostname !== "burgereotakus.com.br" && window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1") {
+      window.location.href = "https://burgereotakus.com.br" + window.location.pathname + window.location.search;
+    }
+  </script>
+  <script type="module" src="main.js" defer></script>
+</head>
+
+<body>
+  <div class="app">
+    <header class="main-header">
+      <div class="header-content">
+        <img class="logo-img" src="imagens/Logo.webp" alt="Otakus Burger" />
+        <div class="title-block">
+          <h1>Burger e Otakus</h1>
+          <p class="tagline">Sabores lendários direto para você</p>
         </div>
-        <button class="header-cart-toggle" id="header-cart-toggle" aria-label="Abrir carrinho">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 .001 3.999A2 2 0 0 0 17 18zM5.2 5a1 1 0 0 0-.98.8L3 13.5A1.5 1.5 0 0 0 4.47 15h11.9a1.5 1.5 0 0 0 1.46-1.18l1.1-5A1.5 1.5 0 0 0 17.46 7H6.34l-.23-1.16A1 1 0 0 0 5.2 5z"/>
-          </svg>
-          <span id="header-cart-count" class="cart-count">0</span>
-        </button>
-      </header>
-
-      <div class="promo-banner">
-        🎄 <strong>Modo promoção de Natal ativado (Válido apenas em dezembro)</strong>
+        <div class="header-extra">
+          <p class="hours">Funcionamento: Terça a Domingo, das 18h às 23h</p>
+        </div>
       </div>
-      
-      <div class="menu-and-cart-container">
-        <div class="menu-wrapper" id="menu-card">
-          <main class="menu-content">
-            <section class="menu-section">
+      <button class="header-cart-toggle" id="header-cart-toggle" aria-label="Abrir carrinho">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 .001 3.999A2 2 0 0 0 17 18zM5.2 5a1 1 0 0 0-.98.8L3 13.5A1.5 1.5 0 0 0 4.47 15h11.9a1.5 1.5 0 0 0 1.46-1.18l1.1-5A1.5 1.5 0 0 0 17.46 7H6.34l-.23-1.16A1 1 0 0 0 5.2 5z" />
+        </svg>
+        <span id="header-cart-count" class="cart-count">0</span>
+      </button>
+    </header>
+
+    <div class="promo-banner hidden" id="promo-banner">
+      <!-- JS irá popular o conteúdo aqui -->
+    </div>
+    <div class="scanlines"></div>
+
+    <div class="menu-and-cart-container">
+      <div class="menu-wrapper" id="menu-card">
+        <main class="menu-content">
+          <section class="menu-section">
+            <h2>
+              <svg class="section-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 9.5C4 7.57 6.24 6 9.5 6h5C17.76 6 20 7.57 20 9.5c0 .28-.22.5-.5.5h-15a.5.5 0 0 1-.5-.5Z" />
+                <path d="M3 11.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 11.25Z" />
+                <path
+                  d="M4 13.5c0-.28.22-.5.5-.5h15c.28 0 .5.22.5.5 0 1.93-2.24 3.5-5.5 3.5h-5C6.24 17 4 15.43 4 13.5Z" />
+              </svg>
+              <span>Burgers</span>
+            </h2>
+            <ul class="item-list">
+              <li class="menu-item" data-item-id="burger-goku" data-item-name="Burger do Goku" data-item-price="19.90">
+                <div class="item-layout">
+                  <div class="item-thumb">
+                    <img src="imagens/Burger_do_Goku.webp" alt="Burger do Goku" />
+                  </div>
+                  <div class="item-body">
+                    <div class="item-main">
+                      <span class="item-name">Burger do Goku</span>
+                      <div class="item-price-block">
+                        <span class="item-price-original">R$ 23,90</span>
+                        <span class="item-price item-price-promo">R$ 19,90</span>
+                      </div>
+                    </div>
+                    <p class="item-desc">
+                      1 Carne de 100g em natura, mussarela, cebola crisp e Molho Super.
+                    </p>
+                    <button class="add-to-cart-btn">Adicionar</button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="menu-item" data-item-id="burger-vegeta" data-item-name="Burger do Vegeta"
+                data-item-price="19.90">
+                <div class="item-layout">
+                  <div class="item-thumb">
+                    <img src="imagens/Burger_do_Vegeta.webp" alt="Burger do Vegeta" />
+                  </div>
+                  <div class="item-body">
+                    <div class="item-main">
+                      <span class="item-name">Burger do Vegeta</span>
+                      <div class="item-price-block">
+                        <span class="item-price-original">R$ 23,90</span>
+                        <span class="item-price item-price-promo">R$ 19,90</span>
+                      </div>
+                    </div>
+                    <p class="item-desc">
+                      1 Carne de 100g em natura, cheddar, cebola crisp e Molho Fumaça.
+                    </p>
+                    <button class="add-to-cart-btn">Adicionar</button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="menu-item" data-item-id="burger-naruto" data-item-name="Burger do Naruto"
+                data-item-price="16.90">
+                <div class="item-layout">
+                  <div class="item-thumb">
+                    <img src="imagens/Burger do Naruto.webp" alt="Burger do Naruto" />
+                  </div>
+                  <div class="item-body">
+                    <div class="item-main">
+                      <span class="item-name">Burger do Naruto</span>
+                      <div class="item-price-block">
+                        <span class="item-price-original">R$ 19,90</span>
+                        <span class="item-price item-price-promo">R$ 16,90</span>
+                      </div>
+                    </div>
+                    <p class="item-desc">
+                      1 Carne de 100g em natura, cheddar e Molho Super.
+                    </p>
+                    <button class="add-to-cart-btn">Adicionar</button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="menu-item" data-item-id="burger-sasuke" data-item-name="Burger do Sasuke"
+                data-item-price="16.90">
+                <div class="item-layout">
+                  <div class="item-thumb">
+                    <img src="imagens/Burger do Sasuke.webp" alt="Burger do Sasuke" />
+                  </div>
+                  <div class="item-body">
+                    <div class="item-main">
+                      <span class="item-name">Burger do Sasuke</span>
+                      <div class="item-price-block">
+                        <span class="item-price-original">R$ 19,90</span>
+                        <span class="item-price item-price-promo">R$ 16,90</span>
+                      </div>
+                    </div>
+                    <p class="item-desc">
+                      1 Carne de 100g em natura, mussarela e Molho Fumaça.
+                    </p>
+                    <button class="add-to-cart-btn">Adicionar</button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="menu-item featured" data-item-id="burger-goku-ssj2" data-item-name="Burger do Goku SSJ 2"
+                data-item-price="26.90">
+                <div class="item-layout">
+                  <div class="item-thumb">
+                    <img src="imagens/Burger do Goku SSj 2-1.webp" alt="Burger do Goku SSJ 2" />
+                  </div>
+                  <div class="item-body">
+                    <div class="item-main">
+                      <span class="item-name">Burger do Goku SSJ 2</span>
+                      <div class="item-price-block">
+                        <span class="item-price-original">R$ 30,90</span>
+                        <span class="item-price item-price-promo">R$ 26,90</span>
+                      </div>
+                    </div>
+                    <p class="item-desc">
+                      2 Carnes de 100g em natura, mussarela, cebola crisp e Molho Super.
+                    </p>
+                    <button class="add-to-cart-btn">Adicionar</button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="menu-item" data-item-id="burger-vegeta-ssj2" data-item-name="Burger do Vegeta SSJ 2"
+                data-item-price="26.90">
+                <div class="item-layout">
+                  <div class="item-thumb">
+                    <img src="imagens/Burger do Vegeta SSj 2.webp" alt="Burger do Vegeta SSJ 2" />
+                  </div>
+                  <div class="item-body">
+                    <div class="item-main">
+                      <span class="item-name">Burger do Vegeta SSJ 2</span>
+                      <div class="item-price-block">
+                        <span class="item-price-original">R$ 30,90</span>
+                        <span class="item-price item-price-promo">R$ 26,90</span>
+                      </div>
+                    </div>
+                    <p class="item-desc">
+                      2 Carnes de 100g em natura, cheddar, cebola crisp e Molho Fumaça.
+                    </p>
+                    <button class="add-to-cart-btn">Adicionar</button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <div>
               <h2>
                 <svg class="section-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 9.5C4 7.57 6.24 6 9.5 6h5C17.76 6 20 7.57 20 9.5c0 .28-.22.5-.5.5h-15a.5.5 0 0 1-.5-.5Z" />
-                  <path d="M3 11.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 11.25Z" />
-                  <path d="M4 13.5c0-.28.22-.5.5-.5h15c.28 0 .5.22.5.5 0 1.93-2.24 3.5-5.5 3.5h-5C6.24 17 4 15.43 4 13.5Z" />
+                  <path
+                    d="M4 10.5C4 8.57 6.24 7 9.5 7h5C17.76 7 20 8.57 20 10.5c0 .28-.22.5-.5.5h-15a.5.5 0 0 1-.5-.5Z" />
+                  <path d="M3 12.75a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12.75Z" />
+                  <path
+                    d="M5 14.5c0-.28.22-.5.5-.5h13c.28 0 .5.22.5.5 0 1.93-2.24 3.5-5.5 3.5h-8C6.24 18 5 16.43 5 14.5Z" />
                 </svg>
-                <span>Burgers</span>
+                <span>Combos</span>
               </h2>
-              <ul class="item-list">
-                <li class="menu-item" data-item-id="burger-goku" data-item-name="Burger do Goku" data-item-price="19.90">
+              <ul class="item-list compact">
+                <li class="menu-item" data-item-id="combo-goku" data-item-name="Combo do Goku" data-item-price="32.70">
                   <div class="item-layout">
                     <div class="item-thumb">
-                      <img src="imagens/Burger_do_Goku.webp" alt="Burger do Goku" />
+                      <img src="imagens/Combo Goku.webp" alt="Combo do Goku" />
                     </div>
                     <div class="item-body">
                       <div class="item-main">
-                        <span class="item-name">Burger do Goku</span>
+                        <span class="item-name">Combo Goku</span>
                         <div class="item-price-block">
-                          <span class="item-price-original">R$ 23,90</span>
-                          <span class="item-price item-price-promo">R$ 19,90</span>
+                          <span class="item-price-original">R$ 44,70</span>
+                          <span class="item-price item-price-promo">R$ 32,70</span>
                         </div>
                       </div>
-                      <p class="item-desc">
-                        1 Carne de 100g em natura, mussarela, cebola crisp e Molho Super.
-                      </p>
+                      <p class="item-desc">Burger + Batata + Refri.</p>
                       <button class="add-to-cart-btn">Adicionar</button>
                     </div>
                   </div>
                 </li>
-
-                <li class="menu-item" data-item-id="burger-vegeta" data-item-name="Burger do Vegeta" data-item-price="19.90">
+                <li class="menu-item" data-item-id="combo-vegeta" data-item-name="Combo do Vegeta"
+                  data-item-price="32.70">
                   <div class="item-layout">
                     <div class="item-thumb">
-                      <img src="imagens/Burger_do_Vegeta.webp" alt="Burger do Vegeta" />
+                      <img src="imagens/Combo Vegeta.webp" alt="Combo do Vegeta" />
                     </div>
                     <div class="item-body">
                       <div class="item-main">
-                        <span class="item-name">Burger do Vegeta</span>
+                        <span class="item-name">Combo Vegeta</span>
                         <div class="item-price-block">
-                          <span class="item-price-original">R$ 23,90</span>
-                          <span class="item-price item-price-promo">R$ 19,90</span>
+                          <span class="item-price-original">R$ 44,70</span>
+                          <span class="item-price item-price-promo">R$ 32,70</span>
                         </div>
                       </div>
-                      <p class="item-desc">
-                        1 Carne de 100g em natura, cheddar, cebola crisp e Molho Fumaça.
-                      </p>
+                      <p class="item-desc">Burger + Batata + Refri.</p>
                       <button class="add-to-cart-btn">Adicionar</button>
                     </div>
                   </div>
                 </li>
-
-                <li class="menu-item" data-item-id="burger-naruto" data-item-name="Burger do Naruto" data-item-price="16.90">
+                <li class="menu-item featured" data-item-id="combo-casal" data-item-name="Combo Casal Otaku"
+                  data-item-price="69.40">
                   <div class="item-layout">
                     <div class="item-thumb">
-                      <img src="imagens/Burger do Naruto.webp" alt="Burger do Naruto" />
+                      <img src="imagens/Combo Casal Otaku.webp" alt="Combo Casal Otaku" />
                     </div>
                     <div class="item-body">
                       <div class="item-main">
-                        <span class="item-name">Burger do Naruto</span>
+                        <span class="item-name">Combo Casal</span>
                         <div class="item-price-block">
-                          <span class="item-price-original">R$ 19,90</span>
-                          <span class="item-price item-price-promo">R$ 16,90</span>
+                          <span class="item-price-original">R$ 89,40</span>
+                          <span class="item-price item-price-promo">R$ 69,40</span>
                         </div>
                       </div>
-                      <p class="item-desc">
-                        1 Carne de 100g em natura, cheddar e Molho Super.
-                      </p>
-                      <button class="add-to-cart-btn">Adicionar</button>
-                    </div>
-                  </div>
-                </li>
-
-                <li class="menu-item" data-item-id="burger-sasuke" data-item-name="Burger do Sasuke" data-item-price="16.90">
-                  <div class="item-layout">
-                    <div class="item-thumb">
-                      <img src="imagens/Burger do Sasuke.webp" alt="Burger do Sasuke" />
-                    </div>
-                    <div class="item-body">
-                      <div class="item-main">
-                        <span class="item-name">Burger do Sasuke</span>
-                        <div class="item-price-block">
-                          <span class="item-price-original">R$ 19,90</span>
-                          <span class="item-price item-price-promo">R$ 16,90</span>
-                        </div>
-                      </div>
-                      <p class="item-desc">
-                        1 Carne de 100g em natura, mussarela e Molho Fumaça.
-                      </p>
-                      <button class="add-to-cart-btn">Adicionar</button>
-                    </div>
-                  </div>
-                </li>
-
-                <li class="menu-item featured" data-item-id="burger-goku-ssj2" data-item-name="Burger do Goku SSJ 2" data-item-price="26.90">
-                  <div class="item-layout">
-                    <div class="item-thumb">
-                      <img src="imagens/Burger do Goku SSj 2-1.webp" alt="Burger do Goku SSJ 2" />
-                    </div>
-                    <div class="item-body">
-                      <div class="item-main">
-                        <span class="item-name">Burger do Goku SSJ 2</span>
-                        <div class="item-price-block">
-                          <span class="item-price-original">R$ 30,90</span>
-                          <span class="item-price item-price-promo">R$ 26,90</span>
-                        </div>
-                      </div>
-                      <p class="item-desc">
-                        2 Carnes de 100g em natura, mussarela, cebola crisp e Molho Super.
-                      </p>
-                      <button class="add-to-cart-btn">Adicionar</button>
-                    </div>
-                  </div>
-                </li>
-
-                <li class="menu-item" data-item-id="burger-vegeta-ssj2" data-item-name="Burger do Vegeta SSJ 2" data-item-price="26.90">
-                  <div class="item-layout">
-                    <div class="item-thumb">
-                      <img src="imagens/Burger do Vegeta SSj 2.webp" alt="Burger do Vegeta SSJ 2" />
-                    </div>
-                    <div class="item-body">
-                      <div class="item-main">
-                        <span class="item-name">Burger do Vegeta SSJ 2</span>
-                        <div class="item-price-block">
-                          <span class="item-price-original">R$ 30,90</span>
-                          <span class="item-price item-price-promo">R$ 26,90</span>
-                        </div>
-                      </div>
-                      <p class="item-desc">
-                        2 Carnes de 100g em natura, cheddar, cebola crisp e Molho Fumaça.
-                      </p>
+                      <p class="item-desc">2 Burgers + 2 Batatas + 2 Refris.</p>
                       <button class="add-to-cart-btn">Adicionar</button>
                     </div>
                   </div>
                 </li>
               </ul>
-
-              <div>
-                <h2>
-                  <svg class="section-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M4 10.5C4 8.57 6.24 7 9.5 7h5C17.76 7 20 8.57 20 10.5c0 .28-.22.5-.5.5h-15a.5.5 0 0 1-.5-.5Z" />
-                    <path d="M3 12.75a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12.75Z" />
-                    <path d="M5 14.5c0-.28.22-.5.5-.5h13c.28 0 .5.22.5.5 0 1.93-2.24 3.5-5.5 3.5h-8C6.24 18 5 16.43 5 14.5Z" />
-                  </svg>
-                  <span>Combos</span>
-                </h2>
-                <ul class="item-list compact">
-                  <li class="menu-item" data-item-id="combo-goku" data-item-name="Combo do Goku" data-item-price="32.70">
-                    <div class="item-layout">
-                      <div class="item-thumb">
-                        <img src="imagens/Combo Goku.webp" alt="Combo do Goku" />
-                      </div>
-                      <div class="item-body">
-                        <div class="item-main">
-                          <span class="item-name">Combo Goku</span>
-                          <div class="item-price-block">
-                            <span class="item-price-original">R$ 44,70</span>
-                            <span class="item-price item-price-promo">R$ 32,70</span>
-                          </div>
-                        </div>
-                        <p class="item-desc">Burger + Batata + Refri.</p>
-                        <button class="add-to-cart-btn">Adicionar</button>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="menu-item" data-item-id="combo-vegeta" data-item-name="Combo do Vegeta" data-item-price="32.70">
-                    <div class="item-layout">
-                      <div class="item-thumb">
-                        <img src="imagens/Combo Vegeta.webp" alt="Combo do Vegeta" />
-                      </div>
-                      <div class="item-body">
-                        <div class="item-main">
-                          <span class="item-name">Combo Vegeta</span>
-                          <div class="item-price-block">
-                            <span class="item-price-original">R$ 44,70</span>
-                            <span class="item-price item-price-promo">R$ 32,70</span>
-                          </div>
-                        </div>
-                        <p class="item-desc">Burger + Batata + Refri.</p>
-                        <button class="add-to-cart-btn">Adicionar</button>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="menu-item featured" data-item-id="combo-casal" data-item-name="Combo Casal Otaku" data-item-price="69.40">
-                    <div class="item-layout">
-                      <div class="item-thumb">
-                        <img src="imagens/Combo Casal Otaku.webp" alt="Combo Casal Otaku" />
-                      </div>
-                      <div class="item-body">
-                        <div class="item-main">
-                          <span class="item-name">Combo Casal</span>
-                          <div class="item-price-block">
-                            <span class="item-price-original">R$ 89,40</span>
-                            <span class="item-price item-price-promo">R$ 69,40</span>
-                          </div>
-                        </div>
-                        <p class="item-desc">2 Burgers + 2 Batatas + 2 Refris.</p>
-                        <button class="add-to-cart-btn">Adicionar</button>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </section>
-
-            <section class="menu-section side-column">
-              <div>
-                <h2>
-                  <svg class="section-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M5 4.5a1 1 0 0 1 1-.5l2.5.5L7.2 18.4a1 1 0 0 1-.98.85H4.5a1 1 0 0 1-1-.88L3 8.5a1 1 0 0 1 .09-.5L4.4 5a1 1 0 0 1 .6-.5Z" />
-                    <path d="M16.5 4a1 1 0 0 1 .96.74l2.5 9a1 1 0 0 1-.96 1.26H9.5a1 1 0 0 1-.96-1.26l2.5-9A1 1 0 0 1 12 4h4.5Z" />
-                  </svg>
-                  <span>Acompanhamentos</span>
-                </h2>
-                <ul class="item-list compact">
-                  <li class="menu-item" data-item-id="batata-sayajins" data-item-name="Batata Sayajins" data-item-price="10.90">
-                    <div class="item-layout">
-                      <div class="item-thumb">
-                        <img src="imagens/Batata Sayajins.webp" alt="Batata Sayajins" />
-                      </div>
-                      <div class="item-body">
-                        <div class="item-main">
-                          <span class="item-name">Batata Sayajins</span>
-                          <div class="item-price-block">
-                            <span class="item-price-original">R$ 12,90</span>
-                            <span class="item-price item-price-promo">R$ 10,90</span>
-                          </div>
-                        </div>
-                        <p class="item-desc">Batata palito fritas.</p>
-                        <button class="add-to-cart-btn">Adicionar</button>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="menu-item" data-item-id="chips-poder" data-item-name="Chips do Poder" data-item-price="10.90">
-                    <div class="item-layout">
-                      <div class="item-thumb">
-                        <img src="imagens/Chips do Poder.webp" alt="Chips do Poder" />
-                      </div>
-                      <div class="item-body">
-                        <div class="item-main">
-                          <span class="item-name">Chips do Poder</span>
-                          <div class="item-price-block">
-                            <span class="item-price-original">R$ 12,90</span>
-                            <span class="item-price item-price-promo">R$ 10,90</span>
-                          </div>
-                        </div>
-                        <p class="item-desc">Batata chips crocantes.</p>
-                        <button class="add-to-cart-btn">Adicionar</button>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h2>
-                  <svg class="section-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 4a1 1 0 0 1 1-1h8a1 1 0 0 1 .98 1.2l-1.2 6A4 4 0 0 1 11.86 14H11a4 4 0 0 1-3.92-3.2l-1.2-6A1 1 0 0 1 7 4Z" />
-                    <path d="M9.5 15.5h5A1.5 1.5 0 0 1 16 17v1.5A2.5 2.5 0 0 1 13.5 21h-3A2.5 2.5 0 0 1 8 18.5V17a1.5 1.5 0 0 1 1.5-1.5Z" />
-                  </svg>
-                  <span>Bebidas</span>
-                </h2>
-                <ul class="item-list compact">
-                  <li class="menu-item" data-item-id="coca-lata" data-item-name="Coca-Cola Lata" data-item-price="6.90">
-                    <div class="item-layout">
-                      <div class="item-thumb">
-                        <img src="imagens/coca_lata.webp" alt="Coca-Cola Lata" />
-                      </div>
-                      <div class="item-body">
-                        <div class="item-main">
-                          <span class="item-name">Coca-Cola</span>
-                          <div class="item-price-block">
-                            <span class="item-price-original">R$ 7,90</span>
-                            <span class="item-price item-price-promo">R$ 6,90</span>
-                          </div>
-                        </div>
-                        <button class="add-to-cart-btn">Adicionar</button>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="menu-item" data-item-id="guarana-lata" data-item-name="Guaraná Lata" data-item-price="6.90">
-                    <div class="item-layout">
-                      <div class="item-thumb">
-                        <img src="imagens/Guarana Lata.webp" alt="Guaraná Lata" />
-                      </div>
-                      <div class="item-body">
-                        <div class="item-main">
-                          <span class="item-name">Guaraná</span>
-                          <div class="item-price-block">
-                            <span class="item-price-original">R$ 7,90</span>
-                            <span class="item-price item-price-promo">R$ 6,90</span>
-                          </div>
-                        </div>
-                        <button class="add-to-cart-btn">Adicionar</button>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h2>
-                  <svg class="section-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M4 10.5C4 8.57 6.24 7 9.5 7h5C17.76 7 20 8.57 20 10.5c0 .28-.22.5-.5.5h-15a.5.5 0 0 1-.5-.5Z" />
-                    <path d="M3 12.75a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12.75Z" />
-                    <path d="M5 14.5c0-.28.22-.5.5-.5h13c.28 0 .5.22.5.5 0 1.93-2.24 3.5-5.5 3.5h-8C6.24 18 5 16.43 5 14.5Z" />
-                  </svg>
-                  <span>Sobremesas</span>
-                </h2>
-                <ul class="item-list compact">
-                  <li class="menu-item" data-item-id="mousse-maracuja" data-item-name="Mousse de Maracujá" data-item-price="10.90">
-                    <div class="item-layout">
-                      <div class="item-thumb">
-                        <img src="imagens/mousse maracuja.webp" alt="Mousse de Maracujá" />
-                      </div>
-                      <div class="item-body">
-                        <div class="item-main">
-                          <span class="item-name">Mousse de Maracujá</span>
-                          <div class="item-price-block">
-                            <span class="item-price-original">R$ 15,90</span>
-                            <span class="item-price item-price-promo">R$ 10,90</span>
-                          </div>
-                        </div>
-                        <p class="item-desc">Mousse cremoso de maracujá.</p>
-                        <button class="add-to-cart-btn">Adicionar</button>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="menu-item" data-item-id="mousse-chocolate" data-item-name="Mousse de Chocolate" data-item-price="10.90">
-                    <div class="item-layout">
-                      <div class="item-thumb">
-                        <img src="imagens/mousse chocolate.webp" alt="Mousse de Chocolate" />
-                      </div>
-                      <div class="item-body">
-                        <div class="item-main">
-                          <span class="item-name">Mousse de Chocolate</span>
-                          <div class="item-price-block">
-                            <span class="item-price-original">R$ 15,90</span>
-                            <span class="item-price item-price-promo">R$ 10,90</span>
-                          </div>
-                        </div>
-                        <p class="item-desc">Mousse de chocolate bem cremoso.</p>
-                        <button class="add-to-cart-btn">Adicionar</button>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="menu-item" data-item-id="mousse-marido-gelado" data-item-name="Mousse Marido Gelado" data-item-price="10.90">
-                    <div class="item-layout">
-                      <div class="item-thumb">
-                        <img src="imagens/mousse marido gelado.webp" alt="Mousse Marido Gelado" />
-                      </div>
-                      <div class="item-body">
-                        <div class="item-main">
-                          <span class="item-name">Mousse Marido Gelado</span>
-                          <div class="item-price-block">
-                            <span class="item-price-original">R$ 15,90</span>
-                            <span class="item-price item-price-promo">R$ 10,90</span>
-                          </div>
-                        </div>
-                        <p class="item-desc">Sobremesa gelada em camadas.</p>
-                        <button class="add-to-cart-btn">Adicionar</button>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              
-            </section>
-          </main>
-        </div>
-
-        <div class="cart-panel-container" id="cart-panel-container">
-          <div class="cart-panel" id="cart-panel">
-            <div class="cart-header">
-              <span class="cart-title">Seu Pedido</span>
-              <button id="cart-close-mobile-btn" class="cart-close-mobile-btn">&times;</button>
-              <button id="clear-cart-btn" class="cart-clear-btn">Limpar</button>
             </div>
-            <div class="cart-items" id="cart-items"></div>
-            <div class="cart-footer">
-              <div class="cart-total">
-                <span>Total:</span>
-                <span id="cart-total">R$ 0,00</span>
-              </div>
-              <button id="checkout-btn" class="checkout-btn" disabled>
-                Finalizar
-              </button>
+          </section>
+
+          <section class="menu-section side-column">
+            <div>
+              <h2>
+                <svg class="section-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M5 4.5a1 1 0 0 1 1-.5l2.5.5L7.2 18.4a1 1 0 0 1-.98.85H4.5a1 1 0 0 1-1-.88L3 8.5a1 1 0 0 1 .09-.5L4.4 5a1 1 0 0 1 .6-.5Z" />
+                  <path
+                    d="M16.5 4a1 1 0 0 1 .96.74l2.5 9a1 1 0 0 1-.96 1.26H9.5a1 1 0 0 1-.96-1.26l2.5-9A1 1 0 0 1 12 4h4.5Z" />
+                </svg>
+                <span>Acompanhamentos</span>
+              </h2>
+              <ul class="item-list compact">
+                <li class="menu-item" data-item-id="batata-sayajins" data-item-name="Batata Sayajins"
+                  data-item-price="10.90">
+                  <div class="item-layout">
+                    <div class="item-thumb">
+                      <img src="imagens/Batata Sayajins.webp" alt="Batata Sayajins" />
+                    </div>
+                    <div class="item-body">
+                      <div class="item-main">
+                        <span class="item-name">Batata Sayajins</span>
+                        <div class="item-price-block">
+                          <span class="item-price-original">R$ 12,90</span>
+                          <span class="item-price item-price-promo">R$ 10,90</span>
+                        </div>
+                      </div>
+                      <p class="item-desc">Batata palito fritas.</p>
+                      <button class="add-to-cart-btn">Adicionar</button>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu-item" data-item-id="chips-poder" data-item-name="Chips do Poder"
+                  data-item-price="10.90">
+                  <div class="item-layout">
+                    <div class="item-thumb">
+                      <img src="imagens/Chips do Poder.webp" alt="Chips do Poder" />
+                    </div>
+                    <div class="item-body">
+                      <div class="item-main">
+                        <span class="item-name">Chips do Poder</span>
+                        <div class="item-price-block">
+                          <span class="item-price-original">R$ 12,90</span>
+                          <span class="item-price item-price-promo">R$ 10,90</span>
+                        </div>
+                      </div>
+                      <p class="item-desc">Batata chips crocantes.</p>
+                      <button class="add-to-cart-btn">Adicionar</button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
+
+            <div>
+              <h2>
+                <svg class="section-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M7 4a1 1 0 0 1 1-1h8a1 1 0 0 1 .98 1.2l-1.2 6A4 4 0 0 1 11.86 14H11a4 4 0 0 1-3.92-3.2l-1.2-6A1 1 0 0 1 7 4Z" />
+                  <path
+                    d="M9.5 15.5h5A1.5 1.5 0 0 1 16 17v1.5A2.5 2.5 0 0 1 13.5 21h-3A2.5 2.5 0 0 1 8 18.5V17a1.5 1.5 0 0 1 1.5-1.5Z" />
+                </svg>
+                <span>Bebidas</span>
+              </h2>
+              <ul class="item-list compact">
+                <li class="menu-item" data-item-id="coca-lata" data-item-name="Coca-Cola Lata" data-item-price="6.90">
+                  <div class="item-layout">
+                    <div class="item-thumb">
+                      <img src="imagens/coca_lata.webp" alt="Coca-Cola Lata" />
+                    </div>
+                    <div class="item-body">
+                      <div class="item-main">
+                        <span class="item-name">Coca-Cola</span>
+                        <div class="item-price-block">
+                          <span class="item-price-original">R$ 7,90</span>
+                          <span class="item-price item-price-promo">R$ 6,90</span>
+                        </div>
+                      </div>
+                      <button class="add-to-cart-btn">Adicionar</button>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu-item" data-item-id="guarana-lata" data-item-name="Guaraná Lata" data-item-price="6.90">
+                  <div class="item-layout">
+                    <div class="item-thumb">
+                      <img src="imagens/Guarana Lata.webp" alt="Guaraná Lata" />
+                    </div>
+                    <div class="item-body">
+                      <div class="item-main">
+                        <span class="item-name">Guaraná</span>
+                        <div class="item-price-block">
+                          <span class="item-price-original">R$ 7,90</span>
+                          <span class="item-price item-price-promo">R$ 6,90</span>
+                        </div>
+                      </div>
+                      <button class="add-to-cart-btn">Adicionar</button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h2>
+                <svg class="section-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M4 10.5C4 8.57 6.24 7 9.5 7h5C17.76 7 20 8.57 20 10.5c0 .28-.22.5-.5.5h-15a.5.5 0 0 1-.5-.5Z" />
+                  <path d="M3 12.75a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12.75Z" />
+                  <path
+                    d="M5 14.5c0-.28.22-.5.5-.5h13c.28 0 .5.22.5.5 0 1.93-2.24 3.5-5.5 3.5h-8C6.24 18 5 16.43 5 14.5Z" />
+                </svg>
+                <span>Sobremesas</span>
+              </h2>
+              <ul class="item-list compact">
+                <li class="menu-item" data-item-id="mousse-maracuja" data-item-name="Mousse de Maracujá"
+                  data-item-price="10.90">
+                  <div class="item-layout">
+                    <div class="item-thumb">
+                      <img src="imagens/mousse maracuja.webp" alt="Mousse de Maracujá" />
+                    </div>
+                    <div class="item-body">
+                      <div class="item-main">
+                        <span class="item-name">Mousse de Maracujá</span>
+                        <div class="item-price-block">
+                          <span class="item-price-original">R$ 15,90</span>
+                          <span class="item-price item-price-promo">R$ 10,90</span>
+                        </div>
+                      </div>
+                      <p class="item-desc">Mousse cremoso de maracujá.</p>
+                      <button class="add-to-cart-btn">Adicionar</button>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu-item" data-item-id="mousse-chocolate" data-item-name="Mousse de Chocolate"
+                  data-item-price="10.90">
+                  <div class="item-layout">
+                    <div class="item-thumb">
+                      <img src="imagens/mousse chocolate.webp" alt="Mousse de Chocolate" />
+                    </div>
+                    <div class="item-body">
+                      <div class="item-main">
+                        <span class="item-name">Mousse de Chocolate</span>
+                        <div class="item-price-block">
+                          <span class="item-price-original">R$ 15,90</span>
+                          <span class="item-price item-price-promo">R$ 10,90</span>
+                        </div>
+                      </div>
+                      <p class="item-desc">Mousse de chocolate bem cremoso.</p>
+                      <button class="add-to-cart-btn">Adicionar</button>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu-item" data-item-id="mousse-marido-gelado" data-item-name="Mousse Marido Gelado"
+                  data-item-price="10.90">
+                  <div class="item-layout">
+                    <div class="item-thumb">
+                      <img src="imagens/mousse marido gelado.webp" alt="Mousse Marido Gelado" />
+                    </div>
+                    <div class="item-body">
+                      <div class="item-main">
+                        <span class="item-name">Mousse Marido Gelado</span>
+                        <div class="item-price-block">
+                          <span class="item-price-original">R$ 15,90</span>
+                          <span class="item-price item-price-promo">R$ 10,90</span>
+                        </div>
+                      </div>
+                      <p class="item-desc">Sobremesa gelada em camadas.</p>
+                      <button class="add-to-cart-btn">Adicionar</button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+
+          </section>
+        </main>
+      </div>
+
+      <div class="cart-panel-container" id="cart-panel-container">
+        <div class="cart-panel" id="cart-panel">
+          <div class="cart-header">
+            <span class="cart-title">Seu Pedido</span>
+            <button id="cart-close-mobile-btn" class="cart-close-mobile-btn">&times;</button>
+            <button id="clear-cart-btn" class="cart-clear-btn">Limpar</button>
+          </div>
+          <div class="cart-items" id="cart-items"></div>
+          <div class="cart-footer">
+            <div class="cart-total">
+              <span>Total:</span>
+              <span id="cart-total">R$ 0,00</span>
+            </div>
+            <button id="checkout-btn" class="checkout-btn" disabled>
+              Finalizar
+            </button>
           </div>
         </div>
       </div>
-      
-      <button class="cart-floating-toggle hidden" id="cart-floating-toggle" aria-label="Abrir carrinho">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 .001 3.999A2 2 0 0 0 17 18zM5.2 5a1 1 0 0 0-.98.8L3 13.5A1.5 1.5 0 0 0 4.47 15h11.9a1.5 1.5 0 0 0 1.46-1.18l1.1-5A1.5 1.5 0 0 0 17.46 7H6.34l-.23-1.16A1 1 0 0 0 5.2 5z"/>
-          </svg>
-          <span id="cart-floating-count" class="cart-count">0</span>
-      </button>
+    </div>
 
-      <div class="modal-backdrop" id="combo-customization-modal">
-        <div class="modal">
-          <button class="modal-close" id="combo-modal-close">&times;</button>
-          <div id="combo-modal-content"></div>
-        </div>
-      </div>
+    <button class="cart-floating-toggle hidden" id="cart-floating-toggle" aria-label="Abrir carrinho">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 .001 3.999A2 2 0 0 0 17 18zM5.2 5a1 1 0 0 0-.98.8L3 13.5A1.5 1.5 0 0 0 4.47 15h11.9a1.5 1.5 0 0 0 1.46-1.18l1.1-5A1.5 1.5 0 0 0 17.46 7H6.34l-.23-1.16A1 1 0 0 0 5.2 5z" />
+      </svg>
+      <span id="cart-floating-count" class="cart-count">0</span>
+    </button>
 
-      <div class="modal-backdrop" id="checkout-modal">
-        <div class="modal">
-          <button class="modal-close" id="checkout-close-btn">&times;</button>
-          <h2>Finalizar Pedido</h2>
-
-          <div class="order-summary" id="order-summary"></div>
-
-          <form id="checkout-form">
-            <fieldset class="fieldset-inline">
-              <legend>Pedido</legend>
-              <label>
-                <input type="radio" name="orderType" value="retirada" checked />
-                Retirada
-              </label>
-              <label>
-                <input type="radio" name="orderType" value="entrega" />
-                Entrega
-              </label>
-            </fieldset>
-
-            <div id="checkout-error" class="error-message"></div>
-
-            <div class="form-group">
-              <label for="customer-name">Nome</label>
-              <input type="text" id="customer-name" name="customerName" required />
-            </div>
-
-            <div class="form-group delivery-only" id="delivery-address-group">
-              <label for="customer-address">Endereço</label>
-              <textarea
-                id="customer-address"
-                name="customerAddress"
-                rows="2"
-                placeholder="Rua, número, bairro, complemento"
-              ></textarea>
-              <p class="delivery-fee-info">
-                Consultar taxa de entrega ao final do pedido. O valor pode variar conforme o local.
-              </p>
-            </div>
-
-            <div class="form-group">
-              <label for="payment-type">Forma de pagamento</label>
-              <select id="payment-type" name="paymentType" required>
-                <option value="">Selecione...</option>
-                <option value="Cartão no crédito">Cartão crédito</option>
-                <option value="Cartão no débito">Cartão débito</option>
-                <option value="Pix">Pix</option>
-                <option value="Dinheiro">Dinheiro</option>
-              </select>
-            </div>
-
-            <div class="pickup-info" id="pickup-info">
-              <p class="pickup-address">
-                Retirada em: <strong>Burger e Otakus</strong> - Caminho 32, Casa 14, Vida Nova - Lauro de Freitas
-              </p>
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=Burger%20e%20Otakus"
-                target="_blank"
-                rel="noopener"
-                class="map-link"
-              >
-                Abrir mapa
-              </a>
-            </div>
-
-            <button type="submit" class="whatsapp-submit-btn">
-              Enviar no WhatsApp
-            </button>
-          </form>
-        </div>
+    <div class="modal-backdrop" id="combo-customization-modal">
+      <div class="modal">
+        <button class="modal-close" id="combo-modal-close">&times;</button>
+        <div id="combo-modal-content"></div>
       </div>
     </div>
-  </body>
-</html>
 
+    <div class="modal-backdrop" id="checkout-modal">
+      <div class="modal">
+        <button class="modal-close" id="checkout-close-btn">&times;</button>
+        <h2>Finalizar Pedido</h2>
+
+        <div class="order-summary" id="order-summary"></div>
+
+        <form id="checkout-form">
+          <fieldset class="fieldset-inline">
+            <legend>Pedido</legend>
+            <label>
+              <input type="radio" name="orderType" value="retirada" checked />
+              Retirada
+            </label>
+            <label>
+              <input type="radio" name="orderType" value="entrega" />
+              Entrega
+            </label>
+          </fieldset>
+
+          <div id="checkout-error" class="error-message"></div>
+
+          <div class="form-group">
+            <label for="customer-name">Nome</label>
+            <input type="text" id="customer-name" name="customerName" required />
+          </div>
+
+          <div class="form-group delivery-only" id="delivery-address-group">
+            <label for="customer-address">Endereço</label>
+            <textarea id="customer-address" name="customerAddress" rows="2"
+              placeholder="Rua, número, bairro, complemento"></textarea>
+            <p class="delivery-fee-info">
+              Consultar taxa de entrega ao final do pedido. O valor pode variar conforme o local.
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label for="payment-type">Forma de pagamento</label>
+            <select id="payment-type" name="paymentType" required>
+              <option value="">Selecione...</option>
+              <option value="Cartão no crédito">Cartão crédito</option>
+              <option value="Cartão no débito">Cartão débito</option>
+              <option value="Pix">Pix</option>
+              <option value="Dinheiro">Dinheiro</option>
+            </select>
+          </div>
+
+          <div class="pickup-info" id="pickup-info">
+            <p class="pickup-address">
+              Retirada em: <strong>Burger e Otakus</strong> - Caminho 32, Casa 14, Vida Nova - Lauro de Freitas
+            </p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger%20e%20Otakus" target="_blank" rel="noopener"
+              class="map-link">
+              Abrir mapa
+            </a>
+          </div>
+
+          <button type="submit" class="whatsapp-submit-btn">
+            Enviar no WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

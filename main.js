@@ -11,7 +11,7 @@ const WHATSAPP_NUMBER = "5571996475834";
 // Use: null para nenhum modo (preços originais)
 //      "natal", "finalDeSemana", "halloween", "pascoa", "freak" para ativar modos configurados abaixo.
 //
-const ACTIVE_PROMO_MODE = "freak"; 
+const ACTIVE_PROMO_MODE = "freak";
 // Exemplo para desativar todas promoções:
 // const ACTIVE_PROMO_MODE = null;
 
@@ -71,146 +71,146 @@ const MENU_PRICES = {
   // Burgers
   "burger-goku": {
     original: 26.9,
-    natal: 19.9,
+    natal: 18.5,
     finalDeSemana: 19.9,
-    halloween: 19.9,
-    pascoa: 19.9,
-    freak: 19.9
+    halloween: 17.9,
+    pascoa: 20.9,
+    freak: 15.9
   },
   "burger-vegeta": {
     original: 26.9,
-    natal: 19.9,
+    natal: 18.5,
     finalDeSemana: 19.9,
-    halloween: 19.9,
-    pascoa: 19.9,
-    freak: 19.9
+    halloween: 17.9,
+    pascoa: 20.9,
+    freak: 15.9
   },
   "burger-naruto": {
     original: 19.9,
-    natal: 16.9,
-    finalDeSemana: 16.9,
-    halloween: 16.9,
+    natal: 14.5,
+    finalDeSemana: 15.9,
+    halloween: 13.9,
     pascoa: 16.9,
-    freak: 16.9
+    freak: 12.5
   },
   "burger-sasuke": {
     original: 19.9,
-    natal: 16.9,
-    finalDeSemana: 16.9,
-    halloween: 16.9,
+    natal: 14.5,
+    finalDeSemana: 15.9,
+    halloween: 13.9,
     pascoa: 16.9,
-    freak: 16.9
+    freak: 12.5
   },
   "burger-goku-ssj2": {
     original: 33.9,
-    natal: 26.9,
+    natal: 24.9,
     finalDeSemana: 26.9,
-    halloween: 26.9,
-    pascoa: 26.9,
-    freak: 26.9
+    halloween: 23.5,
+    pascoa: 27.9,
+    freak: 21.0
   },
   "burger-vegeta-ssj2": {
     original: 33.9,
-    natal: 26.9,
+    natal: 24.9,
     finalDeSemana: 26.9,
-    halloween: 26.9,
-    pascoa: 26.9,
-    freak: 26.9
+    halloween: 23.5,
+    pascoa: 27.9,
+    freak: 21.0
   },
 
   // Acompanhamentos
   "batata-sayajins": {
     original: 12.9,
-    natal: 10.9,
-    finalDeSemana: 10.9,
-    halloween: 10.9,
-    pascoa: 10.9,
-    freak: 10.9
+    natal: 8.9,
+    finalDeSemana: 9.9,
+    halloween: 7.5,
+    pascoa: 10.5,
+    freak: 6.9
   },
   "chips-poder": {
     original: 12.9,
-    natal: 10.9,
-    finalDeSemana: 10.9,
-    halloween: 10.9,
-    pascoa: 10.9,
-    freak: 10.9
+    natal: 8.9,
+    finalDeSemana: 9.9,
+    halloween: 7.5,
+    pascoa: 10.5,
+    freak: 6.9
   },
 
   // Bebidas
   "coca-lata": {
     original: 7.9,
-    natal: 6.9,
-    finalDeSemana: 6.9,
-    halloween: 6.9,
+    natal: 5.5,
+    finalDeSemana: 6.5,
+    halloween: 5.0,
     pascoa: 6.9,
-    freak: 6.9
+    freak: 4.5
   },
   "guarana-lata": {
     original: 7.9,
-    natal: 6.9,
-    finalDeSemana: 6.9,
-    halloween: 6.9,
+    natal: 5.5,
+    finalDeSemana: 6.5,
+    halloween: 5.0,
     pascoa: 6.9,
-    freak: 6.9
+    freak: 4.5
   },
 
   // Combos
   "combo-goku": {
     original: 44.7,
-    natal: 32.7,
+    natal: 29.9,
     finalDeSemana: 32.7,
-    halloween: 32.7,
-    pascoa: 32.7,
-    freak: 32.7
+    halloween: 28.5,
+    pascoa: 35.0,
+    freak: 25.0
   },
   "combo-vegeta": {
     original: 44.7,
-    natal: 32.7,
+    natal: 29.9,
     finalDeSemana: 32.7,
-    halloween: 32.7,
-    pascoa: 32.7,
-    freak: 32.7
+    halloween: 28.5,
+    pascoa: 35.0,
+    freak: 25.0
   },
   "combo-casal": {
     original: 89.4,
-    natal: 69.4,
-    finalDeSemana: 69.4,
-    halloween: 69.4,
-    pascoa: 69.4,
-    freak: 69.4
+    natal: 55.0,
+    finalDeSemana: 65.0,
+    halloween: 59.9,
+    pascoa: 69.9,
+    freak: 49.9
   },
 
   // Sobremesas
   "mousse-maracuja": {
     original: 15.9,
-    natal: 10.9,
-    finalDeSemana: 10.9,
-    halloween: 10.9,
-    pascoa: 10.9,
-    freak: 10.9
+    natal: 9.9,
+    finalDeSemana: 11.5,
+    halloween: 8.9,
+    pascoa: 12.5,
+    freak: 7.9
   },
   "mousse-chocolate": {
     original: 15.9,
-    natal: 10.9,
-    finalDeSemana: 10.9,
-    halloween: 10.9,
-    pascoa: 10.9,
-    freak: 10.9
+    natal: 9.9,
+    finalDeSemana: 11.5,
+    halloween: 8.9,
+    pascoa: 7.9, // Ovo de páscoa vibe
+    freak: 7.9
   },
   "mousse-marido-gelado": {
     original: 15.9,
-    natal: 10.9,
-    finalDeSemana: 10.9,
-    halloween: 10.9,
-    pascoa: 10.9,
-    freak: 10.9
+    natal: 9.9,
+    finalDeSemana: 11.5,
+    halloween: 8.9,
+    pascoa: 12.5,
+    freak: 7.9
   }
 };
 
 // Aplica o modo de promoção aos preços do cardápio e ao banner
 function applyPricingMode(modeKey) {
   const isPromoActive = !!(modeKey && PROMO_MODES[modeKey]);
-  const promoBannerEl = document.querySelector(".promo-banner");
+  const promoBannerEl = document.getElementById("promo-banner");
 
   // Controla banner de promoção
   if (promoBannerEl) {
@@ -239,10 +239,16 @@ function applyPricingMode(modeKey) {
     }
   }
 
-  // Marca no body se a promoção está ativa (usado no CSS para não mudar visual quando não há promo)
+  // Marca no body se a promoção está ativa e qual o tema
   if (document.body) {
+    // limpa temas anteriores
+    Object.keys(PROMO_MODES).forEach(key => {
+      document.body.classList.remove(`theme-${key}`);
+    });
+
     if (isPromoActive) {
       document.body.classList.add("promo-active");
+      document.body.classList.add(`theme-${modeKey}`);
     } else {
       document.body.classList.remove("promo-active");
     }
@@ -283,9 +289,9 @@ function applyPricingMode(modeKey) {
 
 // CARRINHO
 
-const cartPanelContainer = document.getElementById("cart-panel-container"); 
-const cartFloatingToggle = document.getElementById("cart-floating-toggle"); 
-const cartFloatingCountEl = document.getElementById("cart-floating-count"); 
+const cartPanelContainer = document.getElementById("cart-panel-container");
+const cartFloatingToggle = document.getElementById("cart-floating-toggle");
+const cartFloatingCountEl = document.getElementById("cart-floating-count");
 const headerCartToggle = document.getElementById("header-cart-toggle");
 const headerCartCountEl = document.getElementById("header-cart-count");
 const cartCloseBtn = document.getElementById("cart-close-mobile-btn"); // Close button for the modal
@@ -380,7 +386,7 @@ function clearCart() {
   closeCartPanel(); // Close cart sheet if open after clearing
   // Ensure floating toggle hides immediately if it was visible
   if (cartFloatingToggle) {
-      cartFloatingToggle.classList.add('hidden');
+    cartFloatingToggle.classList.add('hidden');
   }
 }
 
@@ -389,7 +395,7 @@ function getCartTotal() {
 }
 
 function getCartItemCount() {
-    return cart.reduce((sum, item) => sum + item.qty, 0);
+  return cart.reduce((sum, item) => sum + item.qty, 0);
 }
 
 
@@ -401,19 +407,19 @@ function renderCart() {
 
   // Update Floating count
   if (cartFloatingCountEl) cartFloatingCountEl.textContent = itemCount;
-  
+
   // Update Header count
   if (headerCartCountEl) headerCartCountEl.textContent = itemCount;
 
   // Manage Floating Toggle visibility
   if (cartFloatingToggle) {
-      if (itemCount > 0) {
-          cartFloatingToggle.classList.remove('hidden');
-          cartFloatingToggle.style.opacity = '';
-          cartFloatingToggle.style.pointerEvents = '';
-      } else {
-          cartFloatingToggle.classList.add('hidden');
-      }
+    if (itemCount > 0) {
+      cartFloatingToggle.classList.remove('hidden');
+      cartFloatingToggle.style.opacity = '';
+      cartFloatingToggle.style.pointerEvents = '';
+    } else {
+      cartFloatingToggle.classList.add('hidden');
+    }
   }
 
 
@@ -442,8 +448,8 @@ function renderCart() {
         <div class="cart-item-main">
           <span class="cart-item-name">${item.name}</span>
           <span class="cart-item-line-price">${formatCurrency(
-            item.price * item.qty
-          )}</span>
+        item.price * item.qty
+      )}</span>
         </div>
         ${customizationText}
         <div class="cart-item-controls">
@@ -472,7 +478,7 @@ function setupCartEvents() {
       const priceStr = li.getAttribute("data-item-price");
       const price = parseFloat(priceStr.replace(",", "."));
       if (!id || !name || isNaN(price)) return;
-      
+
       if (id === "combo-goku" || id === "combo-vegeta" || id === "combo-casal") {
         openComboCustomizationModal(id, name, price);
       } else {
@@ -504,53 +510,53 @@ function setupCartEvents() {
       clearCart();
     });
   }
-  
+
   // Floating Cart Toggle Handler
   if (cartFloatingToggle) {
-      cartFloatingToggle.addEventListener('click', openCartPanel);
+    cartFloatingToggle.addEventListener('click', openCartPanel);
   }
-  
+
   // Header Cart Toggle Handler (Fixed Top Right)
   if (headerCartToggle) {
-      headerCartToggle.addEventListener('click', openCartPanel);
+    headerCartToggle.addEventListener('click', openCartPanel);
   }
 
   // Close cart panel when clicking on the dark backdrop (outside the cart)
   if (cartPanelContainer) {
-      cartPanelContainer.addEventListener('click', (e) => {
-          if (e.target === cartPanelContainer) {
-              closeCartPanel();
-          }
-      });
+    cartPanelContainer.addEventListener('click', (e) => {
+      if (e.target === cartPanelContainer) {
+        closeCartPanel();
+      }
+    });
   }
 }
 
 // Cart Panel Modal Visibility Control (Generalized)
 function openCartPanel() {
-    if (cart.length === 0) return; // Prevent opening if empty
-    
-    if (cartPanelContainer) { 
-        cartPanelContainer.classList.add('open');
-        // Temporarily hide the floating button while the cart modal is open
-        if (cartFloatingToggle) {
-            cartFloatingToggle.style.opacity = '0';
-            cartFloatingToggle.style.pointerEvents = 'none';
-        }
+  if (cart.length === 0) return; // Prevent opening if empty
+
+  if (cartPanelContainer) {
+    cartPanelContainer.classList.add('open');
+    // Temporarily hide the floating button while the cart modal is open
+    if (cartFloatingToggle) {
+      cartFloatingToggle.style.opacity = '0';
+      cartFloatingToggle.style.pointerEvents = 'none';
     }
+  }
 }
 
 function closeCartPanel() {
-    if (cartPanelContainer) {
-        cartPanelContainer.classList.remove('open');
-        // Restore floating button visibility
-        if (cartFloatingToggle) {
-            // Restore visibility via CSS class/opacity, not display, for smooth transition
-            if (getCartItemCount() > 0) {
-                cartFloatingToggle.style.opacity = '1';
-                cartFloatingToggle.style.pointerEvents = 'auto';
-            }
-        }
+  if (cartPanelContainer) {
+    cartPanelContainer.classList.remove('open');
+    // Restore floating button visibility
+    if (cartFloatingToggle) {
+      // Restore visibility via CSS class/opacity, not display, for smooth transition
+      if (getCartItemCount() > 0) {
+        cartFloatingToggle.style.opacity = '1';
+        cartFloatingToggle.style.pointerEvents = 'auto';
+      }
     }
+  }
 }
 
 
@@ -759,9 +765,8 @@ function setupCheckoutEvents() {
       message += `*ITENS DO PEDIDO (COZINHA)*\n`;
       message += `${itemsText}\n\n`;
       message += `*TOTAL A COBRAR:* ${totalText}\n\n`;
-      message += `*Tipo de pedido:* ${
-        orderType === "entrega" ? "Entrega" : "Retirada"
-      }\n`;
+      message += `*Tipo de pedido:* ${orderType === "entrega" ? "Entrega" : "Retirada"
+        }\n`;
       message += `*Nome:* ${name}\n`;
       if (orderType === "entrega") {
         message += `*Endereço:* ${address}\n`;
@@ -780,19 +785,19 @@ function setupCheckoutEvents() {
   }
 }
 
- // COMBO CUSTOMIZATION MODAL
+// COMBO CUSTOMIZATION MODAL
 
 const comboModal = document.getElementById("combo-customization-modal");
 const comboModalClose = document.getElementById("combo-modal-close");
 
 function openComboCustomizationModal(comboId, comboName, comboPrice) {
   if (!comboModal) return;
-  
+
   const modalContent = document.getElementById("combo-modal-content");
   if (!modalContent) return;
-  
+
   let html = "";
-  
+
   if (comboId === "combo-goku") {
     html = `
       <h3>Personalizar ${comboName}</h3>
@@ -895,10 +900,10 @@ function openComboCustomizationModal(comboId, comboName, comboPrice) {
       </div>
     `;
   }
-  
+
   modalContent.innerHTML = html;
   comboModal.classList.add("open");
-  
+
   const confirmBtn = document.querySelector(".combo-confirm-btn");
   confirmBtn.addEventListener("click", () => {
     const comboErrorEl = document.getElementById("combo-error");
@@ -912,7 +917,7 @@ function openComboCustomizationModal(comboId, comboName, comboPrice) {
     }
 
     let customization = null;
-    
+
     if (comboId === "combo-goku" || comboId === "combo-vegeta") {
       const batataSelect = document.getElementById("combo-batata-select");
       const refriSelect = document.getElementById("combo-refri-select");
@@ -991,7 +996,7 @@ function openComboCustomizationModal(comboId, comboName, comboPrice) {
         refri2
       };
     }
-    
+
     addToCart(comboId, comboName, comboPrice, customization);
     closeComboCustomizationModal();
   });
